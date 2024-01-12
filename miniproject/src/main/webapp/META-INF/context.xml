@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource
+		name="jdbc/oracle"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="oracle.jdbc.driver.OracleDriver" 
+		url="jdbc:oracle:thin:@192.168.1.100:1521:xe"
+		username="c##itbank"
+		password="it"
+		maxTotal="20"
+		maxIdle="10"
+		maxWaitMillis="-1"
+	/>
+	<Resources>
+		<PreResources
+			className="org.apache.catalina.webresources.DirResourceSet"
+			webAppMount="/reviewImage"
+			base="C:\\upload" />
+	</Resources>
+</Context>
