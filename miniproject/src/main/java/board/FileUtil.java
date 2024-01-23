@@ -35,7 +35,7 @@ public class FileUtil {
 				if (uploadFile != null) {
 					dto.setImage(uploadFile.getName());
 				}
-				
+				dto.setIdx(Integer.parseInt(mpRequest.getParameter("idx")));
 				dto.setTitle(mpRequest.getParameter("title"));
 				dto.setWriter(mpRequest.getParameter("writer"));
 				dto.setContent(mpRequest.getParameter("content"));

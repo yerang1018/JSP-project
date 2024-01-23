@@ -21,10 +21,19 @@
 		
 		<div class="flex">
 				<div class="imagebox">
+						
 						<a href="${cpath }/view.jsp?idx=${dto.idx}">
 							<img src="${cpath }/reviewImage${dto.image}">
 						</a>
 				</div>
+				<a style="display: block;" href="${cpath }/view.jsp?idx=${dto.idx}">
+				<div class="imageboard">
+									
+						<p class="title">${dto.title }</p>
+						<p class="content">${dto.content }</p>
+				
+					
+				</div></a>
 				
 			</div>
 			</c:forEach>

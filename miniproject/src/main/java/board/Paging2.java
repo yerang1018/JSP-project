@@ -1,7 +1,6 @@
 package board;
 
-public class Paging {
-	
+public class Paging2 {
 	// 요청받은 페이지
 	private int page;
 	// 페이지 당 출력할 게시글의 수
@@ -28,29 +27,23 @@ public class Paging {
 	private int end;
 	
 	
-	
-	
-	// 생성자를 대신하는 static method
-	public static Paging newInstance(int page, int boardCount) {
-		return new Paging(page, boardCount);
+	public static Paging2 newInstance(int page, int boardCount) {
+		return new Paging2(page, boardCount);
 	}
 	
-	private Paging(int page, int boardCount) {
+	private Paging2(int page, int boardCount) {
 		this.page = page;
 		this.boardCount = boardCount;
 		
-		
-		
-		
-		perPage = 10;
+		perPage = 5;
 		offset = (page -1) * perPage;
 		fetch = perPage;
 		
 		pageCount = boardCount /perPage;
 		pageCount += (boardCount % perPage != 0) ? 1 : 0;
-		section = (page -1) / 10;
-		begin = section * 10 + 1;
-		end = begin + 9;
+		section = (page -1) / 5;
+		begin = section * 5 + 1;
+		end = begin + 4;
 		prev = section != 0;
 		next = pageCount > end;
 		
@@ -59,6 +52,8 @@ public class Paging {
 			next = false;
 		}
 	}
+	
+	
 	
 	
 	public int getPage() {
@@ -130,4 +125,8 @@ public class Paging {
 	
 	
 	
+	
+	
+	
+		
 }

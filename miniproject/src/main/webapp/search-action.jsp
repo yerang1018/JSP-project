@@ -13,7 +13,7 @@
    </form>
       
    <c:set var="searchCount" value="${boardDAO.selectSearchCount(param.search) }"></c:set>
-   <c:set var="list" value="${boardDAO.selectList()}" />
+   <c:set var="list" value="${boardDAO.selectSearchList(param.search)}" />
    <c:forEach var="dto" items="${list }" varStatus="loop">
      
       <div class="flex root item hidden">

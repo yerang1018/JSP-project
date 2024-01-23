@@ -1,12 +1,12 @@
-package board;
+package saved;
 
-public class Paging {
+public class savedPaging {
 	
 	// 요청받은 페이지
 	private int page;
 	// 페이지 당 출력할 게시글의 수
 	private int perPage;
-	// 총 게시글의 개수 (삭제, 검색 반영)
+	// 총 게식글의 개수 (삭제, 검색 반영)
 	private int boardCount;
 	// sql에서 사용할 건너뛸 개수의 값
 	private int offset;
@@ -31,11 +31,11 @@ public class Paging {
 	
 	
 	// 생성자를 대신하는 static method
-	public static Paging newInstance(int page, int boardCount) {
-		return new Paging(page, boardCount);
+	public static savedPaging newInstance(int page, int boardCount) {
+		return new savedPaging(page, boardCount);
 	}
 	
-	private Paging(int page, int boardCount) {
+	private savedPaging(int page, int boardCount) {
 		this.page = page;
 		this.boardCount = boardCount;
 		
@@ -47,7 +47,7 @@ public class Paging {
 		fetch = perPage;
 		
 		pageCount = boardCount /perPage;
-		pageCount += (boardCount % perPage != 0) ? 1 : 0;
+		pageCount += (boardCount % perPage != 0) ? 1 :0;
 		section = (page -1) / 10;
 		begin = section * 10 + 1;
 		end = begin + 9;

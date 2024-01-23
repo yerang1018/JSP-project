@@ -115,7 +115,7 @@ public class MemberDAO {
 	   public int delete(MemberDTO dto) {
 		      int row = 0;
 		      
-		      String sql = "delete from member where userid = ? userpw = ?";
+		      String sql = "delete from member where userid = ? and userpw = ?";
 		      
 		      try {
 		         conn = ds.getConnection();

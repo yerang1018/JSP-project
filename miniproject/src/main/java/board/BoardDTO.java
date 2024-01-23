@@ -20,6 +20,17 @@ public class BoardDTO {
 	private String writer;
 	private String content;
 	private Date writeDate;
+	
+	private int deleted;
+	
+	
+	
+	public int getDeleted() {
+		return deleted;
+	}
+	public void setDeleted(int deleted) {
+		this.deleted = deleted;
+	}
 	public int getIdx() {
 		return idx;
 	}
@@ -62,6 +73,7 @@ public class BoardDTO {
 	public void setWriteDate(Date writeDate) {
 		this.writeDate = writeDate;
 	}
+	
 	
 	
 	

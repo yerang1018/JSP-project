@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<div class="joinpage">
 <c:if test="${pageContext.request.method == 'GET' }" >
 	<h3>회원가입</h3>
 	<form method="POST">
@@ -32,7 +33,7 @@
 	</c:if>
 
 </c:if>
-
+</div>
 
 
 </body>

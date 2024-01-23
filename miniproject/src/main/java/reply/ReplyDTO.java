@@ -17,7 +17,23 @@ public class ReplyDTO {
 	private String content;
 	private Date writeDate;
 	
+	// 대댓글
+	private int parent_idx;
+	private int reply_depth;
 	
+	
+	public int getParent_idx() {
+		return parent_idx;
+	}
+	public void setParent_idx(int parent_idx) {
+		this.parent_idx = parent_idx;
+	}
+	public int getReply_depth() {
+		return reply_depth;
+	}
+	public void setReply_depth(int reply_depth) {
+		this.reply_depth = reply_depth;
+	}
 	public int getIdx() {
 		return idx;
 	}

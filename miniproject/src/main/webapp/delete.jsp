@@ -2,29 +2,32 @@
     pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
 
-<div class="loginpage">
-<c:if test="${pageContext.request.method == 'GET' }" >
+
+
+
+<div class="frame center">
+<c:if test="${pageContext.request.method == 'GET' }">
 	<form method="POST">
-		<h3>로그인</h3>
-		<p><input type="text" name="userid" placeholder="ID" required></p>
+		<p><input type="hidden" name="userid" value="${login.userid }"></p>
 		<p><input type="password" name="userpw" placeholder="password" required></p>
-		<p><input type="submit" value="로그인"></p>
+		<p><input type="submit" value="회원탈퇴"></p>
 	</form>
 </c:if>
-
+</div>
 
 <c:if test="${pageContext.request.method == 'POST' }">
 	<jsp:useBean id="dto" class="member.MemberDTO" />
 	<jsp:setProperty property="*" name="dto" />
-	
-	<c:set var="login" value="${memberDAO.login(dto) }" scope="session" />
-	
+	<c:set var="row" value="${memberDAO.delete(dto) }" />
+
+
 	<c:if test="${row != 0 }">
-		<c:redirect url="/" />
+		<c:redirect url="/logout.jsp" />
+
 	</c:if>
 
 </c:if>
-</div>
+
 
 </body>
 </html>
